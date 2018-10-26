@@ -59,33 +59,26 @@
     history = model.fit(df_x_train, df_y_train, validation_data=(df_x_valid,df_y_valid), epochs=1000)
 ![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/process.png)
     
-    9.看loss圖表與MAE圖表
+    9.看MAE圖表
     
     import matplotlib.pyplot as plt
-    def plot_hist(h, xsize=6, ysize=10):
-    fig_size = plt.rcParams["figure.figsize"]
-    plt.rcParams["figure.figsize"] = [xsize, ysize]
-    fig, axes = plt.subplots(nrows=4, ncols=4, sharex=True)
-    
-    plt.subplot(211)
-    plt.plot(h['mean_absolute_error'])
-    plt.plot(h['val_mean_absolute_error'])
-    plt.title('Training vs Validation MAE')
-    plt.ylabel('MAE')
-    plt.xlabel('Epoch')
-    plt.legend(['Train', 'Validation'], loc='upper left')
-    
-    plt.subplot(212)
-    plt.plot(h['loss'])
-    plt.plot(h['val_loss'])
-    plt.title('Training vs Validation Loss')
-    plt.ylabel('Loss')
-    plt.xlabel('Epoch')
-    plt.legend(['Train', 'Validation'], loc='upper left')
-    
-    plt.draw()
+    plt.plot(history.history['mean_absolute_error'])
+    plt.plot(history.history['val_mean_absolute_error'])
+    plt.title('model accuracy')
+    plt.ylabel('accuracy')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
     plt.show()
-    return
+    
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
+    plt.show()
+ ![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/MAE.png)
+    
     
     10.test丟進model預測出price,結果存進csv檔案
     
