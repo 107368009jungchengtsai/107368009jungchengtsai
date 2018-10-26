@@ -1,4 +1,12 @@
 # 107368009jungchengtsai
+作法說明
+
+    train.data分成x與y的資料，y資料保留price，x資料則把id與price給剃除
+    valid.data分成x與y的資料，y資料保留price，x資料則把id與price給剃除
+    test.data分成x資料，x資料剃除id
+    train_x與train_y，valid_x與valid_y做model訓練
+    test_x資料讀進model做prediction
+    
 流程圖
 ![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/process%20chart.png)
  
