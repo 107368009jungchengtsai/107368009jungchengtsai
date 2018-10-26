@@ -100,4 +100,9 @@ Kaggle排名
 
     1.epochs設越高並不會越好，這一次設超過1000就會overfitting
     2.層數設越多並不會變好
-    3.這一次有先使用過correlation matrix，把關聯性低的資料給剃除，但準確性卻下降，所以後來並沒有採用此方法
+    
+    
+改進
+   
+    1.使用過correlation matrix，把關聯性低的資料給剃除
+    2.尋找更好的層數
