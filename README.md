@@ -1,5 +1,5 @@
 # 107368009jungchengtsai
-
+程式流程
     1.宣告和定義
    
     import pandas as pd
@@ -58,4 +58,43 @@
     history = model.fit(df_x_train, df_y_train, validation_data=(df_x_valid,df_y_valid), epochs=1000)
 ![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/process.png)
     
+    9.看loss圖表與MAE圖表
     
+    import matplotlib.pyplot as plt
+    def plot_hist(h, xsize=6, ysize=10):
+    fig_size = plt.rcParams["figure.figsize"]
+    plt.rcParams["figure.figsize"] = [xsize, ysize]
+    fig, axes = plt.subplots(nrows=4, ncols=4, sharex=True)
+    
+    plt.subplot(211)
+    plt.plot(h['mean_absolute_error'])
+    plt.plot(h['val_mean_absolute_error'])
+    plt.title('Training vs Validation MAE')
+    plt.ylabel('MAE')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Validation'], loc='upper left')
+    
+    plt.subplot(212)
+    plt.plot(h['loss'])
+    plt.plot(h['val_loss'])
+    plt.title('Training vs Validation Loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Validation'], loc='upper left')
+    
+    plt.draw()
+    plt.show()
+    return
+    
+    10.test丟進model預測出price,結果存進csv檔案
+    
+    id_col = df_test['id']
+    prediction = model.predict(df_x_test)
+    prediction = prediction.astype(int)
+    submission = pd.DataFrame()
+    submission['id'] = id_col
+    submission['price'] = prediction
+    submission.to_csv('submission.csv', index=False)
+   
+Kaggle排名
+![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/kaggle.png)
