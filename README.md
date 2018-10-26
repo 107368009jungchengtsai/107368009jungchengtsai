@@ -56,6 +56,6 @@
     8.設定跑的次數，和程式跑的過程
     
     history = model.fit(df_x_train, df_y_train, validation_data=(df_x_valid,df_y_valid), epochs=1000)
-![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/%E6%9C%AA%E5%91%BD%E5%90%8D.png)
+![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/process.png)
     
     
