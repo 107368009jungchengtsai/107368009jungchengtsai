@@ -98,6 +98,7 @@
    
 Kaggle排名
 ![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/kaggle.png)
+
 分析
     1.epochs設越高並不會越好，這一次設超過1000就會overfitting
     2.層數設越多並不會變好
