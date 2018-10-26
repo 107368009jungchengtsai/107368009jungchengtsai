@@ -1,4 +1,7 @@
 # 107368009jungchengtsai
+流程圖
+![image](https://github.com/107368009jungchengtsai/107368009jungchengtsai/blob/master/process%20chart.png)
+ 
 程式流程
 
     1.宣告和定義
